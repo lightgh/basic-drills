@@ -11,8 +11,35 @@ public class ObjectBraceletTest{
         ObjectBracelet<Long> var3 = new ObjectBracelet<>(34L);
         System.out.println("var3: " + var3);
 
+        ObjectBracelet<King> var4 = new ObjectBracelet<King>(new King("Junior", "Peterson", 23));
+        System.out.println("King: " + var4);
     }
+
+
 }
+
+ class King {
+    String title;
+    String name;
+    int age;
+
+    public King(String title, String name, int age){
+        this.title = title;
+        this.name = name;
+        this.age = age;
+    }
+
+
+
+     @Override
+     public String toString() {
+         return "King{" +
+                 "title='" + title + '\'' +
+                 ", name='" + name + '\'' +
+                 ", age=" + age +
+                 '}';
+     }
+ }
 
 class ObjectBracelet<CT> {
     CT braceTemplate;
