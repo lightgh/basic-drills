@@ -13,9 +13,70 @@ public class ObjectBraceletTest{
 
         ObjectBracelet<King> var4 = new ObjectBracelet<King>(new King("Junior", "Peterson", 23));
         System.out.println("King: " + var4);
+
+        System.out.println("============================>=====>>");
+
+        ObjectBraceletMultiple<String, Integer, Object, King, String> objectBraceletMultiple =
+                new ObjectBraceletMultiple<>(
+                        "Kong",
+                        34,
+                        new Object(),
+                        new King("Senior", "Panders", 78),
+                        "Software Development Methodologies");
+
+        System.out.println("objectBraceletMultiple: " + objectBraceletMultiple);
+
+
+        ObjectBraceletMultiple<King, King, King, King, String> objectBraceletMultiple2 =
+                new ObjectBraceletMultiple<>(
+                        new King("Senior", "Zebra", 78),
+                        new King("Senior", "Lion", 78),
+                        new King("Senior", "Danger", 76),
+                        new King("Senior", "Panders", 18),
+                        "Software Development Methodologies" );
+
+        System.out.println("objectBraceletMultiple-2: " + objectBraceletMultiple2);
+
+        PairOfT<Integer> nPair1 = new PairOfT<>(200, 300, 500);
+
+        System.out.println(nPair1);
+
     }
 
+}
 
+class PairOfT<T> {
+
+    T object1;
+    T object2;
+    T object3;
+
+    PairOfT(T one, T two, T three){
+        object1 = one;
+        object2 = two;
+        object3 = three;
+    }
+
+    public T getFirst(){
+        return object1;
+    }
+
+    public T getSecond(){
+        return object2;
+    }
+
+    public T getThird(){
+        return object3;
+    }
+
+    @Override
+    public String toString() {
+        return "PairOfT{" +
+                "object1=" + object1 +
+                ", object2=" + object2 +
+                ", object3=" + object3 +
+                '}';
+    }
 }
 
  class King {
@@ -28,8 +89,6 @@ public class ObjectBraceletTest{
         this.name = name;
         this.age = age;
     }
-
-
 
      @Override
      public String toString() {
